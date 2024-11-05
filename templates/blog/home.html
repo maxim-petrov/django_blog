@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    {% block content %}
+        {% for post in object_list %}
+            <h3>{{ post.title }}</h3>
+        {% endfor %}
+    {% endblock content %}
 </body>
 </html>
