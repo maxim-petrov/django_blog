@@ -9,6 +9,7 @@ class PostList(generic.ListView):
     """Список постов"""
     model = Post
     template_name = 'blog/home.html'
+    paginate_by = 5
 
     def get_queryset(self):
         """
@@ -16,5 +17,5 @@ class PostList(generic.ListView):
 
         Их количество определяется в настройках проекта.
         """
-        return self.model.objects.all()
+        return self.model.objects.order_by('-pub_date')
 
